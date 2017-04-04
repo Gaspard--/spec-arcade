@@ -1,0 +1,14 @@
+Score format:
+
+Ex:
+---
+GameName:
+player points
+player points
+GameName2:
+player points
+---
+
+The score file is seperated into section starting with the line "GAME:" without quotes.
+The next lines contain each player name and a score seperated by whitespace.
+If the format of the score file is invalid, the implementation is free to do what it wants.
