@@ -80,7 +80,12 @@ namespace display
     virtual void renderBackground(Sprite const sprite) = 0;
 
     /*
-     * refreshes the screen
+     * clears the screen
+     */
+    virtual void clear() = 0;
+
+    /*
+     * refreshes the screen, can be a noop
      */
     virtual void render() = 0;
   };
