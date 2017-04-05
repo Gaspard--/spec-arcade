@@ -109,7 +109,7 @@ namespace display
     /*
      * Register callBack for given key.
      */
-    virtual void registerCallBack(KeyCode k, std::function<void(void)>);
+    virtual void registerCallBack(KeyCode k, std::function<void(void)>) = 0;
   };
 };
 
