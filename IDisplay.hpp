@@ -33,6 +33,11 @@ namespace display
     virtual ~IDisplay() = default;
 
     /*
+    * size: the game size
+    */
+    virtual void setSize(unsigned int (&size)[2]) = 0;
+    
+    /*
      * The implementation shall open name + an extension depending on the lib (like .txt or .png)
      */
     virtual unsigned int loadSpriteSheet(std::string const &name, unsigned int (&size)[2]) = 0;
@@ -49,24 +54,22 @@ namespace display
     virtual void renderSprite(Sprite, int const (&pos)[2]) = 0;
 
     /*
-     * The implementation shall render a grid of size 'size'.
+     * The implementation shall render the grid of size 'size'.
      * The 'provider' parameter provides the sprite for each each tile given each corrdinate.
      */
-    virtual void renderGrid(std::function<Sprite(unsigned int const (&pos)[2])> provider,
-			    unsigned int const (&size)[2]) = 0;
+    virtual void renderGrid(std::function<Sprite(unsigned int const (&pos)[2])> provider) = 0;
 
     /*
-     * Convenience function : renders a grid.
+     * Convenience function : renders the grid.
      * Uses one spriteSheet and renders with the given indices.
      */
-    virtual void renderGrid(unsigned int spriteSheet, unsigned int const *indices,
-			    unsigned int const (&size)[2]) = 0;
+    virtual void renderGrid(unsigned int spriteSheet, unsigned int const *indices) = 0;
 
     /*
-     * Convenience function : renders a grid.
+     * Convenience function : renders the grid.
      * Takes a array of sprites to render.
      */
-    virtual void renderGrid(Sprite const *sprites, unsigned int const (&size)[2]) = 0;
+    virtual void renderGrid(Sprite const *sprites) = 0;
 
     /*
      * Renders the sprite as background.
@@ -85,6 +88,9 @@ namespace display
   };
 };
 
+/*
+ * Creates an display::IDisplay.
+ */
 extern "C" std::unique_ptr<display::IDisplay> createDisplay();
 
 #endif
