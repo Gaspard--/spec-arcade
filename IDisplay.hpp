@@ -38,12 +38,6 @@ namespace display
     virtual unsigned int loadSpriteSheet(std::string const &name, unsigned int (&size)[2]) = 0;
 
     /*
-     * Does not need to be called: the implementaion shall free texture prematurely.
-     * (Textures shall also be freed upon IDisplay destruction)
-     */
-    virtual void freeSpritSheet(unsigned int spritSheet) = 0;
-
-    /*
      * The implementation shall render the sprite upon the render function call.
      * The position represents a position in game coordinates.
      */
