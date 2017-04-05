@@ -85,6 +85,31 @@ namespace display
      * refreshes the screen, can be a noop
      */
     virtual void render() = 0;
+
+    /*
+     * Enum for key handling
+     */
+    enum class KeyCode: unsigned int
+      {
+        ESC = 0,
+	TWO = 1,
+	THREE = 2,
+	FOUR = 3,
+	FIVE = 4,
+	EIGHT = 5,
+        NINE = 6,
+	UP = 7,
+	DOWN = 8,
+	LEFT = 9,
+	RIGHT = 10,
+	SHOOT = 11,
+        SIZE = 12,
+      };
+
+    /*
+     * Register callBack for given key.
+     */
+    virtual void registerCallBack(KeyCode k, std::function<void(void)>);
   };
 };
 
