@@ -103,7 +103,8 @@ namespace display
 	LEFT = 9,
 	RIGHT = 10,
 	SHOOT = 11,
-        SIZE = 12,
+	FULLSCREEN = 12,
+        SIZE = 13,
       };
 
     /*
