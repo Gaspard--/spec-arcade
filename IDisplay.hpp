@@ -71,7 +71,7 @@ namespace display
     /*
      * Renders the sprite as background.
      */
-    virtual void renderBackground(Sprite const sprite) = 0;
+    virtual void renderBackground(Sprite sprite) = 0;
 
     /*
      * clears the screen
