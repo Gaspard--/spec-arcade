@@ -79,12 +79,12 @@ namespace display
     /*
      * Load a font, if applicable
      */
-    virtual void loadFont(std::string const &name);
+    virtual void loadFont(std::string const &name) = 0;
 
     /*
      * render text.
      */
-    virtual void renderText(std::string const &text, int (&pos)[2]);
+    virtual void renderText(std::string const &text, int (&pos)[2]) = 0;
 
     /*
      * clears the screen
