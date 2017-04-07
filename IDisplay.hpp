@@ -98,6 +98,8 @@ namespace display
 
     /*
      * Enum for key handling
+     * Keys not present in this enum have an implementation defined behavior.
+     * Multiple keys are allowed to trigger a same KeyCode.
      */
     enum class KeyCode: unsigned int
       {
@@ -113,14 +115,20 @@ namespace display
 	LEFT = 9,
 	RIGHT = 10,
 	SHOOT = 11,
-	FULLSCREEN = 12,
-        SIZE = 13,
+	LETTER_A = 12,
+	LETTER_Z = LETTER_A + 'z' - 'a',
+        SIZE,
       };
 
     /*
      * Register callBack for given key.
      */
     virtual void registerCallBack(KeyCode k, std::function<void(void)>) = 0;
+
+    /*
+     * Register global callBack, called if no callback exists for given key.
+     */
+    virtual void registerGlobalCallBack(std::function<void(KeyCode)>) = 0;
   };
 };
 
