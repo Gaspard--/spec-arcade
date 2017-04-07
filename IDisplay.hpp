@@ -77,6 +77,16 @@ namespace display
     virtual void renderBackground(Sprite sprite) = 0;
 
     /*
+     * Load a font, if applicable
+     */
+    virtual void loadFont(std::string const &name);
+
+    /*
+     * render text.
+     */
+    virtual void renderText(std::string const &text, int (&pos)[2]);
+
+    /*
      * clears the screen
      */
     virtual void clear() = 0;
